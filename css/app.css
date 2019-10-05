@@ -1,0 +1,221 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right, black,#E9967A,gray);
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.game-heading {
+    color: white;
+    padding-bottom: 40px;
+}
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+
+    width: 660px;
+    min-height: 690px;
+    background: linear-gradient(10deg, #FFFAF0 0%, gray 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(100, 0, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20 0 3em;
+    ;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.stars {
+    padding: 0;
+    display: inline-block;
+    margin:  3px ;
+}
+
+.star {
+    list-style-type: none;
+    display: inline-block;
+    color: #ffcd00;
+    
+}
+
+
+
+.moves {
+    display: inline-block;
+    padding:0 ;
+}
+
+#timer {
+    padding-left: 60px;
+}
+
+#restart {
+    padding-left: 70px;
+    cursor: pointer;
+
+}
+
+ .open {
+    
+    background: #02b3e4;
+    opacity: 1;
+}
+
+
+/* to stop event listener after opening two cards */
+
+.stop-event {
+    pointer-events: none;
+}
+
+/*to appears the carde*/
+.show {
+    font-size: 4em;
+}
+
+.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 5em;
+}
+
+
+
+/*Model Styles*/
+
+.modal {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(49, 49, 49, 0.7);
+    z-index: 1;
+}
+
+.modal-content {
+    position: fixed;
+    background-color: #fff;
+    top: 40%;
+    left: 25%;
+    width: 625px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 40px #e3e1e1;
+    list-style: none;
+}
+
+.modal-content {
+     display: inline-block;
+}
+
+/*color for move & timer*/
+span {
+    color:  #483D8B;
+}
+
+
+
+
+/*media query 
+          Neux5*/
+@media screen and (max-width: 360px) {
+    
+    #timer {
+        padding-left: 25px;
+    }
+
+
+    .deck {
+        width: 100%;
+        padding: 3%;
+        margin: 0 auto;
+        min-height: 100%;
+    }
+    .deck .card {
+       width: 68px;
+        height: 92px;
+        margin-top: 2%;
+    }
+    .modal-content {
+        width: 90%;
+        left: 5%;
+        top: 25%;
+        margin: auto 0;
+    }
+}
+
